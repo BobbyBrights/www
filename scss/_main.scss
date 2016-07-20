@@ -37,3 +37,38 @@ a, a:hover, a:visited, a:active {
   padding-left:2rem;
   padding-right:2rem;
 }
+#work {
+  .row:first-child {
+    margin-bottom:0;
+  }
+  > .row {
+    margin-bottom: 10rem; 
+    .columns {
+      position: relative;
+      h2 {
+        position: relative;
+        z-index: 2;
+      }
+      .work-img {
+        position: absolute;
+        top:-8rem;
+        left: 2rem;
+        opacity:.2;
+        transition:all .5s ease-in-out;
+      }
+    }
+    .columns:first-child {
+
+      .work-img {
+        left:-2rem;
+        right: 5rem;
+      }
+    }
+
+    &:hover .columns{
+      .work-img {
+        opacity: .4;
+      }
+    }
+  }
+}
