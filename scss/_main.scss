@@ -39,10 +39,12 @@ a, a:hover, a:visited, a:active {
 }
 #work {
   .row:first-child {
-    margin-bottom:0;
+    margin-bottom:5rem;
+    border:none;
   }
   > .row {
-    margin-bottom: 10rem; 
+    margin-bottom: 13rem; 
+    border: 3px solid #183478;
     .columns {
       position: relative;
       h2 {
@@ -53,7 +55,7 @@ a, a:hover, a:visited, a:active {
         position: absolute;
         top:-8rem;
         left: 2rem;
-        opacity:.2;
+        opacity:.4;
         transition:all .5s ease-in-out;
       }
     }
@@ -67,7 +69,7 @@ a, a:hover, a:visited, a:active {
 
     &:hover .columns{
       .work-img {
-        opacity: .4;
+        opacity: .1;
       }
     }
   }
