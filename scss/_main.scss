@@ -115,7 +115,11 @@ h4 {
   left: 0;
   width: 10px;
 }
-
+.caption {
+  font-size: .7rem;
+  margin-top: 7px;
+  float: left;
+}
 .flex-video{
   &.other {
     padding-bottom: 53.5%;
