@@ -278,27 +278,30 @@ h4 {
   position: absolute;
   height: 40px;
   width: 40px;
-  @include transition(all .5s cubic-bezier(0.9,-0.16, 0.91, 1.18));
+  @include transition(all 1s cubic-bezier(0.9,-0.16, 0.91, 1.18));
   @include transform(rotate(0deg) scale(1));
   &.hidden {
 
-    @include transition(all .5s  cubic-bezier(0.27,-0.17, 0, 1.06));
+    @include transition(all 1s  cubic-bezier(0.27,-0.17, 0, 1.06));
     @include transform(rotate(100deg) scale(0));
   }
 }
 #wave {
+  @include transform-origin(45% 45%);
   img {
     @include animation(wave 1.5s ease-in infinite alternate);
   }
 }
 #down {
   left: 10px;
+  @include transform-origin(20% 45%);
   img {
     @include animation(down 1.5s ease-in infinite alternate);
   }
 }
 #nice {
   left:5px;
+  @include transform-origin(35% 45%);
   img {
     @include animation(nice 1.5s ease-in infinite alternate);
   }
