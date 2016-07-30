@@ -278,12 +278,22 @@ h4 {
   position: absolute;
   height: 40px;
   width: 40px;
-  @include transition(all 1s cubic-bezier(0.9,-0.16, 0.91, 1.18));
+  @include transition(all 1s);
   @include transform(rotate(0deg) scale(1));
+  left:0;
+  &.pre-hidden {
+
+    @include transition(all 1s);
+    //@include transform(rotate(100deg) scale(0));
+    opacity: 0;
+    left: 30px;
+  }
   &.hidden {
 
-    @include transition(all 1s  cubic-bezier(0.27,-0.17, 0, 1.06));
-    @include transform(rotate(100deg) scale(0));
+    @include transition(all 1s  ease-out);
+    //@include transform(rotate(100deg) scale(0));
+    opacity: 0;
+    left: -30px;
   }
 }
 #wave {
@@ -293,20 +303,23 @@ h4 {
   }
 }
 #down {
-  left: 10px;
   @include transform-origin(20% 45%);
   img {
+    left: 10px;
     @include animation(down 1.5s ease-in infinite alternate);
   }
 }
 #nice {
-  left:5px;
   @include transform-origin(35% 45%);
   img {
+    left:5px; 
+    width:30px;
     @include animation(nice 1.5s ease-in infinite alternate);
   }
 }
-
+#cool {
+  width:30px;
+}
 
 
 
