@@ -65,8 +65,9 @@ function newpage() {
   window.location = newLocation;
 
 }
+if ($('.player').length){
 $('.player').get(0).play();
-
+}
 };
 function waitForWebfonts(fonts, callback) {
     var loadedFonts = 0;
@@ -125,13 +126,15 @@ $(document).ready(function() {
   var check1 = false, check2 = false;
   waitForWebfonts(['Cinetype-Regular'], function() {
     if (check2) {
-
+      console.log('check1')
       init();
+
     }
     check1 = true;
   })
   waitForWebfonts(['Walsheim'], function() {
     if (check1) {
+      console.log('check2')
 
       init();
     }
