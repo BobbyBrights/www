@@ -90,6 +90,7 @@ background-repeat: none;
   }
   .row {
     align-self: flex-end;
+    padding-bottom:30px;
   }
 }
 .work-img {
@@ -124,14 +125,9 @@ h4 {
 
     transition: all .5s ease-in-out;
 }
-#next {
-  padding-top:2rem;
-}
 #work, #next {
 
-  @include breakpoint(small only) {
-    margin-bottom: 200px;
-  }
+
   > .row {
     margin-bottom:100px;
     &:hover {
@@ -141,15 +137,21 @@ h4 {
       h2 {
         box-shadow: inset 0 -40px 0 rgba(255,255,255,1);
 
-        @include breakpoint(medium down) {
+        @include breakpoint(medium only) {
           box-shadow: inset 0 -24px 0 rgba(255,255,255,1);
+        }
+        @include breakpoint(small only) {
+          box-shadow: inset 0 -10px 0 rgba(255,255,255,.2);
         }
       }
       p,h4 {
         box-shadow: inset 0 -30px 0 rgba(255,255,255,1);
 
-        @include breakpoint(medium down) {
+        @include breakpoint(medium only) {
           box-shadow: inset 0 -35px 0 rgba(255,255,255,1);
+        }
+        @include breakpoint(small only) {
+          box-shadow: inset 0 -10px 0 rgba(255,255,255,.2);
         }
       }
     }
@@ -181,8 +183,17 @@ h4 {
     }
   }
 }
+#next {
+  padding-top:2rem;
+  @include breakpoint(small only) {
+    margin-bottom: 200px;
+  }
+}
 #work {
   padding-top:40px;
+  @include breakpoint(small only) {
+    margin-bottom: 100px;
+  }
   & > .row:nth-child(odd) {
     .description {
       left: -9%;
@@ -268,15 +279,60 @@ h4 {
   &.pxvspx {
     padding-bottom: 59.5%;
   }
+  &.neighborland {
+    padding-bottom: 60.5%;
+  }
   &.twobyone {
     padding-bottom: 50%;
     padding-top: 0;
     margin-bottom: 2rem;
+    border: none;
+  }
+  border: 3px solid #183478;
+  //border-radius: 0 0 3px 3px;
+}
+.browser {
+  position: relative;
+  &:before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #183478;
+    position: absolute;
+    border-radius: 50%;
+    top:6px;
+    left: 23px;
+  }
+  .browser-top {
+
+    border:solid #183478;
+    border-width:  3px 3px 0 3px ;
+    //border-radius:3px 3px 0 0;
+    height: 15px;
+    position: relative;
+    &:before, &:after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #183478;
+      position: absolute;
+      border-radius: 50%;
+      top:3px;
+    }
+    &:before {
+      left: 4px;
+    }
+    &:after {
+      left: 12px;
+    }
   }
 }
 
 .goodbye {
   margin-bottom: 200px;
+  @include breakpoint(small only) {
+    margin-bottom: 50px;
+  }
   .emoji {
     width:40px;
   }
@@ -304,6 +360,10 @@ h4 {
     &:hover {
       box-shadow: inset 0 -30px 0 #fff;
      }
+
+    @include breakpoint(small only) {
+      box-shadow: none;
+    }
 
   }
 }
@@ -448,7 +508,7 @@ h4 {
 }
 
 
-.author {
+.author { 
   font-size: 1rem;
   margin-bottom:1rem;
   z-index: 3;
@@ -493,6 +553,9 @@ p,ol,ul,.recommendation,.author {
     position: relative;
     left:-30px;
     opacity: 0;
+    @include breakpoint(small only) {
+      left: 30px;
+    }
   }
   & > .row:nth-child(even) {
     position: relative;
@@ -509,6 +572,24 @@ p,ol,ul,.recommendation,.author {
 
 
 
+.coming-soon {
+  &:hover {
+    img {
+      opacity: .4 !important; 
+      cursor: wait !important;
+    }
+    a {
 
+      cursor: wait !important;
+    }
+  }
+    img { 
+      cursor: wait !important;
+    }
+    a {
+      
+      cursor: wait !important;
+    }
+}
 
 

@@ -66,8 +66,13 @@ function newpage() {
 
 }
 if ($('.player').length){
-$('.player').get(0).play();
-}
+  $('.player').each(function( index ) {
+    $(this).get(0).play();
+  });
+} 
+$('.coming-soon a').click(function(e){
+  e.preventDefault();
+})
 };
 function waitForWebfonts(fonts, callback) {
     var loadedFonts = 0;
