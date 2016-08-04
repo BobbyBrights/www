@@ -579,24 +579,3 @@ p,ol,ul,.recommendation,.author {
 
 
 
-.coming-soon {
-  &:hover {
-    img {
-      opacity: .4 !important; 
-      cursor: wait !important;
-    }
-    a {
-
-      cursor: wait !important;
-    }
-  }
-    img { 
-      cursor: wait !important;
-    }
-    a {
-      
-      cursor: wait !important;
-    }
-}
-
-
