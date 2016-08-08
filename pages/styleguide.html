@@ -1,0 +1,262 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earl Carlson - Adventure Lab</title>
+    <link rel="stylesheet" href="../css/app.css">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="border border-top"></div>
+    <div class="border border-bottom"></div>
+    <div class="border border-left"></div>
+    <div class="border border-right"></div>
+    <div id="page">
+      <div class="row">
+        <div class="large-12 columns">
+          <p>Technology</p>
+          <h1>Designing a Styleguide</h1>
+          <h3 style="">A successful design team needs to be able to build prototypes quickly to test assumptions before engineering starts building out any features. Our team took the time to craft a front-end styleguide and update it across the entire product.</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+          <img src="../assets/img/test/Rock-climber.jpg" class="full-img"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-8 medium-offset-2 columns">
+          <p><b>It Started With an Article</b></p>
+            <p>I was working at Nokia on a new product line for the company, and starting the web design. Given that I am – what some might call – a full stack designer, I decided to create a base front-end styleguide for our product. After talking to a few other designers about their favorite styleguides and combing through them, I landed on using the atomic design system. The engineering team and I worked together to decide on proper markup, and the best ways to proceed with the project.</p>
+            <p>In the mean time, I had taken the list of styleguides, brand guidelines, and front-end frameworks and created a comprehensive list and posted them up on Medium. That article ended up being my most popular to date, and continues to get traffic showing that this problem is one that no one has figured out a good way of tackling the problem yet.</p>
+            <p>As with many other styleguides, the styleguide at Nokia failed. It was implemented, but – as it turned out – our design direction for the entire project changed multiple times. The team tried its best to keep everything up to date with each change in direction, but eventually the styleguide fell too far out of sync to be useful and we were just building and designing one off components for each new element on the page. </p>
+        </div>
+      </div>
+      <div class="row story-photos">
+        <div class="medium-5 columns medium-offset-1 ">
+          <div class="row">
+            <div class="columns small-12">
+              <img src="../assets/img/test/6.jpg"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="columns small-12">
+              <img src="../assets/img/test/7-2.jpg"/>
+            </div>
+          </div>
+        </div>
+        <div class="small-12 medium-5 columns tall-photo">
+          <img src="../assets/img/test/5-2.jpg"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-8 medium-offset-2 columns">
+          <p><b>A New Beginning</b><br/></p>
+          
+            <p>I learned an incredible amount from that experience as well as the conversations that the Medium article had spurred. There were many things we could have done better, but a few were ultimately out of our hands. When I transitioned over to the team at DigitalOcean, they had just gone through a major innovative to normalize every page on the site. My first question after hearing about this was, “Where’s the styleguide?” Unfortunately the team didn’t have the bandwidth during the normalization process to create a styleguide. We started talking about it and decided that we should spend the time to set the future design team up for success. </p>
+            <p>The team building the styleguide was: Jesse Chase, Joel Califa, Colin Keany, and myself. We started off deciding the design framework that would be used. Atomic design was good, but its definitions for what would fall into each of the buckets – Atoms, Molecules, Organisms, Templates, and Pages – are pretty vague and start to fall apart. Instead we opted for creating our own definitions that were much more precise: Layout Modules, Elements, Components, and Utilities. Layout modules are simply the elements used to layout a page: the grid system, and whitespace needs. Elements are simple objects with no major interactive pieces: buttons, and form elements are two examples. Components are things like modals – anything that require javascript and can contain elements. Lastly, utilities are helpers: margin, padding, text alignment and color.</p>
+            <p>After working up these definitions we started to create each of these elements using Nicholas Gallagher’s SUIT flavor of BEM. At first this took the entire team some getting used to, but after we played with it for a little bit, we fell in love with the dead simple naming convention. It matched the same set of requirements we had for our design buckets: it had to be easy to understand, and it had to be clear with its definitions.</p>
+            <pre>
+              <code>/* Utility */
+.u-utilityName {}
+
+/* Component */
+.ComponentName {}
+
+/* Component modifier */
+.ComponentName--modifierName {}
+
+/* Component descendant */
+.ComponentName-descendant {}
+
+/* Component descendant modifier */
+.ComponentName-descendant--modifierName {}
+
+/* Component state (scoped to component) */
+.ComponentName.is-stateOfComponent {}
+              </code>
+            </pre>
+            <p>With this simple structure we were able to create a wealth of easy to identify patterns form across the platform.</p>
+        </div>
+      </div>
+      <div class="row story-photos">
+        <div class="small-12 medium-5 medium-offset-1 columns tall-photo" >
+          <img src="../assets/img/test/2-2.jpg"  />
+        </div>
+        <div class="medium-5 columns">
+          <div class="row" >
+            <div class="columns small-12">
+              <img src="../assets/img/test/3-3.jpg"/>
+            </div>
+          </div>
+          <div class="row" >
+            <div class="columns small-12">
+              <img src="../assets/img/test/1-2.jpg"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-8 medium-offset-2 columns">
+          <p><b>Implementation</b><br/>
+            <p>After talking with the engineers, we realized that there was not going to be a clean way to do this switch since we were updating the markup, css, and javascript. We decided that it would be best to “rip off the band-aid” and do the massive change all at once. We created a separate branch off of our product and started crafting the styleguide one component at a time. We were looking at the designs that were already in place and trying to find ways to create a broader system of elements that would work. After many days and nights of work, we finally had a branch that touched every single layout on our product. The moment of truth was putting the product up on our staging grounds for the entire company to test out. Instantly the reaction was excellent in the company. We received many complements on how much faster the site was and – even after the normalization – much more consistent. After pushing the updated site live feedback from our users started to roll in, and the consensus was incredibly positive.</p>
+            
+        </div>
+      </div> 
+
+      <div class="row">
+        <div class="medium-8 medium-offset-2 columns">
+          <!-- <img src="../assets/img/test/web/journal2.png"/> -->
+          <!-- <img src="../assets/img/test/web/map2.png"/> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-8 medium-offset-2 columns">
+          <p><b>The Design Authority for the Styleguide</b><br/>
+            <p>As the styleguide moved forward, we needed to avoid the pitfalls of the last time I was involved in the styleguide project. We needed to create a set of rules for keeping the styleguide up to date and find ways to move it forward as our product evolves. To that end I set up the core styleguide group: one front-end developer from each vertical, and myself as the design representative. This way we would be able to hold each other and each of our teams accountable for using and updating the styleguide. We created a base set of rules for upgrading the styleguide, the core of which is: feel free to stray from the styleguide and create new patterns. If that pattern is then used on more than one view, make a case for the pattern to the styleguide team in our bi-weekly meeting. This allowed us to be quick in development, while still allowing for freedom to experiment with new and fresh patterns.</p>
+            
+            
+        </div>
+      </div> 
+
+      <div class="row">
+        <div class="medium-8 medium-offset-2 columns">
+          <!-- <img src="../assets/img/test/web/journal2.png"/> -->
+          <!-- <img src="../assets/img/test/web/map2.png"/> -->
+        </div>
+      </div>
+     
+        <div class="row" style="">
+          <div class=" small-12 columns image" style="padding-top:20px; padding-bottom:100px;">
+            <img src="../assets/img/adventurelab/Devices.png" class="full-img"/>
+
+          </div>
+        </div>
+<!-- 
+        <div class="row two-col  deets">
+          <div class="small-12  medium-10 medium-offset-1     columns">
+            <div class="row">
+              <div class="small-12 medium-6 columns">
+                <img src="../assets/img/test/here-camera-back.png" style="width:432px;">
+                <h4>The Camera</h4>
+                <ul style='font-size:1rem;line-height:1.6rem;'>
+                  <li>4k video at 30fps and 1k video at 180fps</li>
+                  <li>Tracks location, speed, and elevation</li>
+                  <li>Comes with our outdoor map embedded</li>
+                  <li>Android based</li>
+                  <li>Wi-Fi, LTE, and GPS enabled</li>
+                  <li>Fully waterproof</li>
+                  <li>Ability to share to social destinations</li>
+                </ul>
+              </div>
+              <div class="small-12 medium-6 columns">
+                <img src="../assets/img/test/here-sensor-cut.png">
+                <h4>The Sensor</h4>
+                <ul style='font-size:1rem;line-height:1.6rem;'>
+                  <li>Tracks location, speed, and elevation</li>
+                  <li>Fully waterproof</li>
+                  <li>Pairs with companion app</li>
+                  <li>GPS enabled</li>
+                  <li>Tracks gear that it is attached to</li>
+                  <li>Reverse Geolocation on the fly</li>
+                  <li>Custom E-ink screen for maximum visibility</li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-12 medium-6 columns">
+                <img src="../assets/img/test/1_Frontal_View_White.png" style="height:291px;">
+                <h4>The App</h4>
+                <ul style='font-size:1rem;line-height:1.6rem;'>
+                  <li>Pairs with Camera and Sensor</li>
+                  <li>Add and remove gear</li>
+                  <li>Custom HERE map embedded</li>
+                  <li>Live Data Stream</li>
+                  <li>Share to social media destinations</li>
+                  <li>See cover frames from all captures with camera</li>
+                  <li>Displays summary of all data for the owner</li>
+                </ul>
+              </div>
+              <div class="small-12 medium-6 columns">
+                <img src="../assets/img/test/web/macbook-retina-big.png">
+                <h4>The Web Platform</h4>
+                <ul style='font-size:1rem;line-height:1.6rem;'>
+                  <li>Public space for guests to view content</li>
+                  <li>Add and remove camera sensor</li>
+                  <li>Custom HERE map embedded</li>
+                  <li>Share to social media destinations</li>
+                  <li>Displays summary of all data for the sharer</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      <div class="row">
+        <div class="columns small-12">
+          <div class="flex-video twobyone">
+            <video  controls poster="../assets/img/test/videoposter.jpg">
+              <source src="../oldsite/assets/videos/here/anthem2.mp4"   type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-7 small-12 columns">
+          <p><b>The Future</b><br/>
+            <p>When I joined DigitalOcean, I wasn’t sure that a team could make and implement a styleguide that wouldn’t eventually become outdated. Our team worked tirelessly to make sure that we created a system that would work well into the future. After switching over to lead the brand design team, I handed off the reigns to another phenomenal product designer, Alex Penny. Under his watch, the team has ported the styleguide over to being based in Ember.js and they’ve added multiple new patterns to the library. </p>
+        </div>
+        <div class="medium-5 small-12 columns">
+          <p><b>Collaborators</b><br/>
+
+          Jesse Chase &mdash; <i>Creative Director</i><br/>
+          Joel Califa &mdash; <i>Product Designer</i><br/>
+          Colin Keany &mdash; <i>Product Designer</i><br/>
+          Alex Penny &mdash; <i>Product Designer</i><br/>
+          Neil Taylor &mdash; <i>Front-end Developer</i><br/>
+          Ihor Marusyk &mdash; <i>Front-end Developer</i><br/>
+          Brian Sinclair &mdash; <i>Front-end Developer</i><br/>
+
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="next">
+  
+      <div class="row" style="">
+        <div class="medium-5 small-12 columns description" style="padding-top:40px;">
+          <div>
+            <p><a href="wikipedia.html"><i>Next Project </i></a></p><br/>
+            <h2><a href="wikipedia.html">Building a Global Editor</a></h2>
+          </div>
+        </div>
+        <div class="medium-7 hide-for-small-only columns image" style="padding-top:40px;">
+          <a href="wikipedia.html"><img src="../assets/img/test/wikimania.jpg" class="work-img"/></a>
+
+        </div>
+
+      </div>
+      <div class="row" style="margin-bottom:100px;">
+        <div class="columns small-12 medium-7 medium-offset-5 description;" >
+          <h><a href="../index.html">< head home</a></h2>
+        </div>
+      </div>
+    </div>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/what-input/what-input.js"></script>
+    <script src="../bower_components/foundation-sites/dist/foundation.js"></script>
+    <script src="../js/velocity.js"></script>
+    <script src="../js/app.js"></script>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-81909850-1', 'auto');
+ga('send', 'pageview');</script>
+  </body>
+</html>
